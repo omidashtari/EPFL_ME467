@@ -23,7 +23,7 @@ function v = field2vector(f,N,symm)
     F = fft(f);
     v = imag(F(2:Nd+1));
 
-    if symm
+    if ~symm
         v = [v;real(F(2:Nd+1))];
     end
 end

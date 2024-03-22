@@ -26,7 +26,7 @@ function f = vector2field(v,N,symm)
     F = zeros(N,1);
     F(2:Nd+1) = v(1:Nd)*1j;
     
-    if symm
+    if ~symm
         F(2:Nd+1) = F(2:Nd+1) + v(Nd+1:2*Nd);
     end
 
