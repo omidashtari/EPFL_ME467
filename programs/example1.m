@@ -18,7 +18,7 @@ uT = vector2field(vT,N,symm);
 
 figure
     plot(x,uT,'LineWidth',2)
-    hold on; grid on
+	hold on; grid on
     plot(x,u0,'LineWidth',2)
 	xlabel('x'); ylabel('u')
-    legend('u(T)','u(0)')
+	legend('u(T)','u(0)')
