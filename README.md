@@ -1,6 +1,6 @@
 # EPFL ME467: Turbulence
 ### Time-marching the KSE
-The following program is an example of how to utilize the function `KSE_integrate` to advance the KSE forward in time.
+The following program (`/programs/example1.m`) is an example of how to utilize the function `KSE_integrate` to advance the KSE forward in time.
 ```
 close all; clear; clc
 
@@ -24,7 +24,8 @@ figure
   plot(x,uT,'LineWidth',2)
   hold on; grid on
   plot(x,u0,'LineWidth',2)
-  xlabel('x'); ylabel('u(T)')
+  xlabel('x'); ylabel('u')
+  legend('u(T)','u(0)')
 ```
 This program can be broken down into the following steps:
 - We first tell MATLAB to look for functions in a folder of the relative path `../functions/`.
@@ -36,7 +37,7 @@ This program can be broken down into the following steps:
  **Note 1**: By setting the 4th argument of `KSE_integrate` to `0`, no intermediate snapsahot is stored and `vT` is a column vector. In order to store intermediate snapshots, you can call `[vt,t] = KSE_integrate(v0,T,dt,dt_store,L,N,symm)`. As a result, every `dt_store` the snapshot is appended to `vt` as a new column. The vector `t` contains the time instance assocaited with each column of `vt`.
 
 ### Search for a periodic orbit
-The following program is an example of how to utilize the function `search4PO` to converge a periodic orbit from a guess, here the same sine function as the previous program and a guessed period of `T_guess=50`.
+The following program (`/programs/example2.m`) is an example of how to utilize the function `search4PO` to converge a periodic orbit from a guess. Here, the same sine function as the previous program and a period of `T_guess=50` are chosen for demonstration.
 ```
 close all; clear; clc
 
@@ -73,4 +74,4 @@ options.MaxIterations = 7.500000e+01.
 Error using search4PO (line 36)
 Search for unstable periodic orbit failed...
 ```
-In case of a successful search `u_best` is the converged state vector and `T_best` is the converged period of the periodic orbit. Note that `u_guess` and `u_best` are both state vectors. 
+In case of a successful search, `u_best` is the converged state vector and `T_best` is the converged period of the periodic orbit. Note that `u_guess` and `u_best` are both state vectors.
