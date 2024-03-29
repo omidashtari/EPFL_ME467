@@ -5,7 +5,6 @@ addpath('../functions/')
 L = 39;
 N = 64;
 symm = true;
-T = 500;
 dt = 0.1;
 
 [x,~] = domain(L,N);
