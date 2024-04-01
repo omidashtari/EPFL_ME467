@@ -73,4 +73,4 @@ options.MaxIterations = 7.500000e+01.
 Error using search4PO (line 36)
 Search for unstable periodic orbit failed...
 ```
-In case of a successful search, `u_best` is the converged state vector and `T_best` is the converged period of the periodic orbit. Note that `u_guess` and `u_best` are both state vectors.
+In case of a successful search, `u_best` is the converged state vector and `T_best` is the converged period of the periodic orbit. In that case, if you advance `u_best` as the initial condition for the time interval of `T_best` (see the first example above), the trajectory closes on itself. Note that `u_guess` and `u_best` are both state vectors.
