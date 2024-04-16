@@ -6,10 +6,10 @@ close all; clear; clc
 
 addpath('../functions/')
 
-L = 39;
+L = 38.6;
 N = 64;
 symm = true;
-T = 500;
+T = 750;
 dt = 0.1;
 
 [x,~] = domain(L,N);
@@ -29,7 +29,7 @@ figure
 ```
 This program can be broken down into the following steps:
 - We first tell MATLAB to look for functions in a folder of the relative path `../functions/`.
-- Then, we define the domain length `L = 39`, number of grid points `N = 64`, center symmetry `symm = true`, integration time `T = 500` and time step size `dt = 0.1`.
+- Then, we define the domain length `L = 38.6`, number of grid points `N = 64`, center symmetry `symm = true`, integration time `T = 750` and time step size `dt = 0.1`.
 - To define the initial condition, we first construct the grid points using `[x,~] = domain(L,N)`. Then, the initial condition is defined as the sine function `u0 = sin(2*pi*x/L)`. Note that this initial condition is consistent with the imposed center symmetry.
 - We construct the state vector associated with `u0` by calling `v0 = field2vector(u0,N,symm)`. Finally, we call `[vT,~] = KSE_integrate(v0,T,dt,0,L,N,symm)` where `vT` is the state vector of the KSE obtained by advancing `v0` for time `T`.
 - Since `vT` is a state vector and not the vector of grid values, we call `uT = vector2field(vT,N,symm)` to transform `vT` to its corresponding physical field `uT` and, then, plot `u0` and `v0` in one figure.
@@ -43,7 +43,7 @@ close all; clear; clc
 
 addpath('../functions/')
 
-L = 39;
+L = 38.6;
 N = 64;
 symm = true;
 dt = 0.1;
