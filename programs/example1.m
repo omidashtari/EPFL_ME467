@@ -2,10 +2,10 @@ close all; clear; clc
 
 addpath('../functions/')
 
-L = 39;
+L = 38.6;
 N = 64;
 symm = true;
-T = 500;
+T = 750;
 dt = 0.1;
 
 [x,~] = domain(L,N);
