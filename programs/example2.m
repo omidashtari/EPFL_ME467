@@ -2,7 +2,7 @@ close all; clear; clc
 
 addpath('../functions/')
 
-L = 39;
+L = 38.6;
 N = 64;
 symm = true;
 dt = 0.1;
